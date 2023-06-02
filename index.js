@@ -44,7 +44,7 @@ csvHeaders_workspace_report.forEach((header) => {
 
 //process next batch of Enterprise Members 
 async function processNextBatchOfMembers() {
-  let getManagedMembersUrl = `https://trellis.coffee/1/enterprises/${enterpriseId}/members?fields=idEnterprisesDeactivated,fullName,username,memberEmail,dateLastAccessed&associationTypes=licensed&key=${apiKey}&token=${apiToken}&count=${batchCount}`;
+  let getManagedMembersUrl = `https://api.trello.com/1/enterprises/${enterpriseId}/members?fields=idEnterprisesDeactivated,fullName,username,memberEmail,dateLastAccessed&associationTypes=licensed&key=${apiKey}&token=${apiToken}&count=${batchCount}`;
   if (lastMemberIndex > 0) {
     getManagedMembersUrl = getManagedMembersUrl + `&startIndex=${lastMemberIndex}`;
   };
