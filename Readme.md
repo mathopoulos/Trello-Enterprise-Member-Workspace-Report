@@ -15,7 +15,9 @@ In addition there are 5 customizations that the user can customize if they would
 
 ---
 ## Other Notes
-An NaN value in the  Day Since Last Active or Last Active means that the user has never logged in and thus has not last active date. 
+- The Members report only include Enterprise Members. Deactivated users and Free Managed users are not included. 
+- The Workspace report only inlclude Enterprise Workspaces. It does not include Pending or Non-Enterprise Workspaces. 
+- An NaN value in the  Day Since Last Active or Last Active means that the user has never logged in and thus has not last active date. 
 
 ---
 ## Have Questions?
