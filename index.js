@@ -95,7 +95,7 @@ async function apicall(enterpriseResponse) {
             let date = new Date( parseInt( workspaceTimestamp, 16 ) * 1000 );
             let adminUsernameArray = workspaceResponse.members.map(member =>member.username);
             let adminUsernameString = adminUsernameArray.join(';');
-            const rowData = [workspaceResponse.id, workspaceResponse.name, adminUsernameArray, date];
+            const rowData = [workspaceResponse.id, workspaceResponse.name, adminUsernameString, date];
             fs.appendFileSync(`workspace_report_${timestamp}.csv`, rowData.join(', ') + '\r\n');
             console.log(`${workspaceResponse.id} has been added to the report.`);
             workspacesProcessed +=1;
