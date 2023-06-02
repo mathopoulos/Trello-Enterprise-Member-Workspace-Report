@@ -80,7 +80,7 @@ async function apicall(enterpriseResponse) {
     await new Promise((resolve, reject) => {
       setTimeout(() => {
         let idOrganization = enterpriseResponse.idOrganizations[i];
-        let getWorkspaceUrl = `https://trellis.coffee/1/organizations/${idOrganization}?members=admins&&key=${apiKey}&token=${apiToken}`;
+        let getWorkspaceUrl = `https://api.trello.com/1/organizations/${idOrganization}?members=admins&&key=${apiKey}&token=${apiToken}`;
 
         request.get({
           url: getWorkspaceUrl,
@@ -116,7 +116,7 @@ async function getNextOrg(enterpriseResponse){
 
 //process next batch of Enterprise Workspaces
 async function processNextBatchOfWorkspaces() {
-  let getEntWorkspacesUrl = `https://trellis.coffee/1/enterprises/${enterpriseId}?fields=idOrganizations&&key=${apiKey}&token=${apiToken}`;
+  let getEntWorkspacesUrl = `https://api.trello.com/1/enterprises/${enterpriseId}?fields=idOrganizations&&key=${apiKey}&token=${apiToken}`;
 
   return new Promise((resolve, reject) => {
     request.get({
