@@ -91,9 +91,10 @@ async function apicall(enterpriseResponse) {
           if (workspaceResponse.error) {
             console.log(`Error: ${workspaceResponse.message}`);
           } else {
-            let workspaceTimestamp = workspaceResponse.id.toString().substring(0,8)
-            let date = new Date( parseInt( workspaceTimestamp, 16 ) * 1000 )
-            let adminUsernameArray = workspaceResponse.members.map(member =>member.username)
+            let workspaceTimestamp = workspaceResponse.id.toString().substring(0,8);
+            let date = new Date( parseInt( workspaceTimestamp, 16 ) * 1000 );
+            let adminUsernameArray = workspaceResponse.members.map(member =>member.username);
+            let adminUsernameString = adminUsernameArray.join(';');
             const rowData = [workspaceResponse.id, workspaceResponse.name, adminUsernameArray, date];
             fs.appendFileSync(`workspace_report_${timestamp}.csv`, rowData.join(', ') + '\r\n');
             console.log(`${workspaceResponse.id} has been added to the report.`);
@@ -101,7 +102,7 @@ async function apicall(enterpriseResponse) {
           }
           resolve();
         });  
-      }, i * 10); // each API call will be delayed by 5 seconds more than the previous
+      }, i * 10); // each API call will be delayed by 0.1 seconds more than the previous
     });
   }
 }
