@@ -10,7 +10,7 @@ There are 3 variables that the user must input for the script to work:
 - **API Key** - This is the API Key used to authenticate that the script has permission to run the needed operations against the chosen Enterprise. The API token must be tied to a user of the Enterprise with Enterprise Admin Permissions. See the [Trello API documentation](https://developer.atlassian.com/cloud/trello/guides/rest-api/api-introduction/)
 - **Enterprise ID** - This is the ID of the Enterprise that the user would like to run the script against. See the [Trello API documentation](https://developer.atlassian.com/cloud/trello/guides/rest-api/api-introduction/)
  
-In addition there are 5 customizations that the user can customize if they would like: 
+In addition there is 1 other customizations that the user can manage if they would like: 
 - **batchCount** - This variable allows you to define how many members you want to full from the API at once. The default is set to 100. 
 
 ---
